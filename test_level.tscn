@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://brqfkt3womhgj"]
+
+[ext_resource type="Script" path="res://PlayerCamera.gd" id="1_d8hdk"]
+[ext_resource type="PackedScene" uid="uid://bj7y0y042dw3u" path="res://player.tscn" id="1_wf62p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nyfi"]
+size = Vector3(5, 0.2, 5)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.81643, 0.577444, 0, -0.577444, 0.81643, 0, 1.09285, 1.27887)
+script = ExtResource("1_d8hdk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_0nyfi")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+size = Vector3(5, 0.2, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_wf62p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313645, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64221, 2.22609, 1.35006)
+light_color = Color(1, 0.894118, 0.756863, 1)
+omni_range = 8.5951
