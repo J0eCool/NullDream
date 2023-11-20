@@ -19,7 +19,7 @@ func _ready():
 	angle.y = atan2(d.y, r)
 
 
-func camera_input():
+func camera_input() -> Vector2:
 	var input = Vector2()
 	input.x = Input.get_axis("camera_left", "camera_right")
 	input.y = Input.get_axis("camera_down", "camera_up")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj7y0y042dw3u"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_thi77"]
+[ext_resource type="Script" path="res://Player3D.gd" id="1_thi77"]
 [ext_resource type="Texture2D" uid="uid://sh24x417ngb5" path="res://art/test_player.png" id="1_xuiig"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8o04"]
@@ -20,7 +20,7 @@ height = 0.364682
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_thi77")
-speed = 1.5
+speed = 1.4
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 1

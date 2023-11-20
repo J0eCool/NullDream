@@ -18,13 +18,12 @@ func move_input() -> Vector2:
 
 func _physics_process(_delta):
 	var input = move_input()
-	input.angle()
 
 	var camera = get_viewport().get_camera_3d()
-	var delta = self.position - camera.position
+	var delta: Vector3 = self.get_position() - camera.get_position()
 	delta.y = 0
-	var up = delta.normalized()
-	var right = up.rotated(Vector3.UP, -PI/2)
+	var up: Vector3 = delta.normalized()
+	var right: Vector3 = up.rotated(Vector3.UP, -PI/2)
 	
 	velocity = (input.x*right + input.y*up) * speed
 	move_and_slide()
