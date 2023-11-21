@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4exje2nga8k7"]
+
+[ext_resource type="Texture2D" uid="uid://b888s16ea3032" path="res://art/bad-sword.png" id="1_7wbxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgnjw"]
+size = Vector2(218.333, 46.6667)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_7wbxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.625, -0.5)
+scale = Vector2(0.15, 0.15)
+shape = SubResource("RectangleShape2D_qgnjw")
