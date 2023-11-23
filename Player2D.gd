@@ -34,7 +34,10 @@ func _physics_process(dt):
 		direction = 0
 	velocity.x = move_toward(velocity.x, direction*speed, dt*accel_ratio*speed)
 	if direction and not attacking:
-		$AnimatedSprite2D.flip_h = direction < 0
+		# need to check sign(scale.y) because of a quirk of how godot handles scale internally
+		# see docs for `scale` for details
+		scale.x = sign(direction)*sign(scale.y)*abs(scale.x)
+		# $AnimatedSprite2D.flip_h = direction < 0
 
 	move_and_slide()
 
@@ -50,10 +53,12 @@ func _process(dt):
 			attack_cooldown = 1 / attack_speed
 			attack_node = attack_scene.instantiate()
 			add_child(attack_node)
-			if not $AnimatedSprite2D.flip_h:
-				attack_node.position = Vector2(34, 0)
-			else:
-				attack_node.position = Vector2(-34, 0)
-				var sprite = attack_node.find_child("Sprite2D") as Sprite2D
-				sprite.flip_h = true
-
+			attack_node.position = Vector2(34, 0)
+			attack_node.set_physics_process(true)
+#			if not $AnimatedSprite2D.flip_h:
+#				attack_node.position = Vector2(34, 0)
+#			else:
+#				attack_node.position = Vector2(-34, 0)
+#				var sprite = attack_node.find_child("Sprite2D") as Sprite2D
+#				sprite.flip_h = true
+#

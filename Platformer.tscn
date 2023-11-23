@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://qxq0gv6capvo"]
+[gd_scene load_steps=4 format=3 uid="uid://qxq0gv6capvo"]
 
 [ext_resource type="PackedScene" uid="uid://c57e7gdn4yn4e" path="res://Player2D.tscn" id="1_aaxd4"]
+[ext_resource type="PackedScene" uid="uid://qatr8rf4aats" path="res://enemies/test_dummy.tscn" id="2_vmcgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6h6h2"]
 size = Vector2(252, 67)
 
 [node name="Level" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("2_vmcgb")]
+position = Vector2(258, 180)
 
 [node name="Player" parent="." instance=ExtResource("1_aaxd4")]
 position = Vector2(127, 177)
