@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c57e7gdn4yn4e"]
+[gd_scene load_steps=5 format=3 uid="uid://c57e7gdn4yn4e"]
 
 [ext_resource type="Script" path="res://Player2D.gd" id="1_7iths"]
 [ext_resource type="Texture2D" uid="uid://sh24x417ngb5" path="res://art/test_player.png" id="1_ucf2n"]
-[ext_resource type="PackedScene" uid="uid://d4exje2nga8k7" path="res://sord.tscn" id="3_j41bo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2b2vb"]
 animations = [{
@@ -21,8 +20,10 @@ height = 52.0
 [node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_7iths")
 speed = 120.0
-accel_ratio = 5.05
+accel_ratio = 5.0
 jump_height = 90.0
+gravity = 1400.0
+attack_speed = 2.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.5)
@@ -30,6 +31,3 @@ sprite_frames = SubResource("SpriteFrames_2b2vb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hupxn")
-
-[node name="Sord" parent="." instance=ExtResource("3_j41bo")]
-position = Vector2(34, 0)
