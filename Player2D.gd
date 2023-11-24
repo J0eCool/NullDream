@@ -12,12 +12,17 @@ extends CharacterBody2D
 var attack_cooldown = 0.0
 
 
+var was_on_floor = true
 func _physics_process(dt):
+	var attacking = attack_cooldown > 0
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity*dt
+	if attacking and not was_on_floor and is_on_floor():
+		attack_cooldown = 0
+	was_on_floor = is_on_floor()
 
-	var attacking = attack_cooldown > 0
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not attacking:
 		# h = 1/2gt^2, v = gt
 		# t = sqrt(2h/g)

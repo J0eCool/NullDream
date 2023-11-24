@@ -9,6 +9,7 @@ func _ready():
 
 func get_hit():
 	$Label.visible = true
+	$Label.text = ["oof", "owie", "ouch"].pick_random()
 	$HitTimer.start()
 
 
