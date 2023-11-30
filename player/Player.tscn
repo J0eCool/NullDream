@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c57e7gdn4yn4e"]
 
-[ext_resource type="Script" path="res://Player2D.gd" id="1_7iths"]
-[ext_resource type="Texture2D" uid="uid://sh24x417ngb5" path="res://art/test_player.png" id="1_ucf2n"]
+[ext_resource type="Script" path="res://player/Player.gd" id="1_1iopu"]
+[ext_resource type="Texture2D" uid="uid://sh24x417ngb5" path="res://art/test_player.png" id="2_xgymo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2b2vb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ucf2n")
+"texture": ExtResource("2_xgymo")
 }],
 "loop": true,
 "name": &"default",
@@ -17,9 +17,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hupxn"]
 height = 52.0
 
-[node name="Player2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_7iths")
+script = ExtResource("1_1iopu")
 speed = 120.0
 accel_ratio = 5.0
 jump_height = 90.0
