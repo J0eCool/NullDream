@@ -22,8 +22,8 @@ collision_layer = 2
 script = ExtResource("1_1iopu")
 speed = 120.0
 accel_ratio = 5.0
-jump_height = 90.0
-gravity = 1400.0
+jump_height = 120.0
+gravity = 950.0
 attack_speed = 2.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
