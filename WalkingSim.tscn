@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg76xl4xjwhow"]
+[gd_scene load_steps=6 format=3 uid="uid://bg76xl4xjwhow"]
 
 [ext_resource type="Script" path="res://WalkingPlayer.gd" id="1_1nv46"]
+[ext_resource type="Shader" path="res://WalkingSim.gdshader" id="1_d7nwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ict5"]
+render_priority = 0
+shader = ExtResource("1_d7nwl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yw0cf"]
 albedo_color = Color(1, 0, 0, 1)
@@ -17,6 +22,7 @@ transform = Transform3D(2.29915, 0, 0, 0, 2.29915, 0, 0, 0, 2.29915, 0, 0, 0)
 transform = Transform3D(0.854087, -0.52013, 0, 0.52013, 0.854087, 0, 0, 0, 1, 1.05121, -0.742553, 0.17274)
 use_collision = true
 size = Vector3(1.2, 0.8, 2)
+material = SubResource("ShaderMaterial_3ict5")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043086, -0.115003, 0.17274)
@@ -26,11 +32,13 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42604, 0.403165, 0)
 flip_faces = true
 size = Vector3(5.5, 2, 2)
+material = SubResource("ShaderMaterial_3ict5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Terrain/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35141, 0.505922, 0)
 flip_faces = true
 size = Vector3(2, 0.977937, 4.8)
+material = SubResource("ShaderMaterial_3ict5")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.97674, 0, 0, 0, 1.97674, 0, 0, 0, 1.97674, -2.48671, 0.0978806, 0.17274)
