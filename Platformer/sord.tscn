@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4exje2nga8k7"]
 
 [ext_resource type="Texture2D" uid="uid://b888s16ea3032" path="res://art/bad-sword.png" id="1_7wbxt"]
-[ext_resource type="Script" path="res://sord.gd" id="1_lxi70"]
+[ext_resource type="Script" path="res://Platformer/sord.gd" id="1_lxi70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgnjw"]
 size = Vector2(218.333, 46.6667)

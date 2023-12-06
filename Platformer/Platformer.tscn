@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://qxq0gv6capvo"]
 
-[ext_resource type="PackedScene" uid="uid://c57e7gdn4yn4e" path="res://player/Player.tscn" id="1_aaxd4"]
-[ext_resource type="PackedScene" uid="uid://qatr8rf4aats" path="res://enemies/test_dummy.tscn" id="2_vmcgb"]
-[ext_resource type="TileSet" uid="uid://ckesondv5sao6" path="res://new_tile_set.tres" id="3_oykft"]
-[ext_resource type="Script" path="res://player/CameraFollow.gd" id="4_ax3li"]
+[ext_resource type="PackedScene" uid="uid://c57e7gdn4yn4e" path="res://Platformer/player/Player.tscn" id="1_aaxd4"]
+[ext_resource type="PackedScene" uid="uid://qatr8rf4aats" path="res://Platformer/enemies/test_dummy.tscn" id="2_vmcgb"]
+[ext_resource type="TileSet" uid="uid://ckesondv5sao6" path="res://Platformer/new_tile_set.tres" id="3_oykft"]
+[ext_resource type="Script" path="res://Platformer/player/CameraFollow.gd" id="4_ax3li"]
 
 [node name="Level" type="Node2D"]
 

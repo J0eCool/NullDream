@@ -46,7 +46,7 @@ func _physics_process(dt):
 
 	move_and_slide()
 
-var attack_scene = preload("res://sord.tscn")
+var attack_scene = preload("res://Platformer/sord.tscn")
 var attack_node: Node2D = null
 func _process(dt):
 	attack_cooldown -= dt

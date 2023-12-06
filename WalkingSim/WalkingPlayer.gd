@@ -7,15 +7,16 @@ extends CharacterBody3D
 
 @export var look_sensitivity = 1.0
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 @onready var camera: Camera3D = $Camera3D
 
-var mouse_captured: float = true
+var mouse_captured: float = false
+
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	set_mouse_captured(true)
 
 
 func _unhandled_input(event: InputEvent) -> void:

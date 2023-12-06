@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg76xl4xjwhow"]
 
-[ext_resource type="Script" path="res://WalkingPlayer.gd" id="1_1nv46"]
-[ext_resource type="Shader" path="res://WalkingSim.gdshader" id="1_d7nwl"]
+[ext_resource type="Script" path="res://WalkingSim/WalkingPlayer.gd" id="1_1nv46"]
+[ext_resource type="Shader" path="res://WalkingSim/WalkingSim.gdshader" id="1_d7nwl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ict5"]
 render_priority = 0

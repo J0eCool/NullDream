@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://drob358kq6qwp"]
+
+[ext_resource type="Script" path="res://SqueedleCraft/SqueedleCraft.gd" id="1_ir8mt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir8mt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 218.0
+offset_right = 251.0
+offset_bottom = 249.0
+text = "CLICK ME"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 205.0
+offset_top = 271.0
+offset_right = 390.0
+offset_bottom = 349.0
+text = "oh god whydid you do it
+the orphans
+there's blood everyone"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

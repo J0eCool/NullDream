@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qatr8rf4aats"]
 
-[ext_resource type="Script" path="res://enemies/test_dummy.gd" id="1_5xygh"]
+[ext_resource type="Script" path="res://Platformer/enemies/test_dummy.gd" id="1_5xygh"]
 [ext_resource type="Texture2D" uid="uid://b1gl0uumqpsut" path="res://art/xR3embZq_400x400.jpg" id="1_cg6q5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_857qp"]
