@@ -41,12 +41,11 @@ func _process(dt):
 		dam.t -= dt
 		if dam.t <= 0:
 			to_rem.append(i)
+			dam.label.queue_free()
 		dam.v.y += 1500*dt
 		dam.label.position += dam.v*dt
 	for i in to_rem:
-		var dam = damage_labels[i]
 		damage_labels.remove_at(i)
-		$Damage.remove_child(dam.label)
 
 
 func _on_button_pressed():

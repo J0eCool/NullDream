@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://drob358kq6qwp"]
+[gd_scene load_steps=4 format=3 uid="uid://drob358kq6qwp"]
 
 [ext_resource type="Script" path="res://SqueedleCraft/SqueedleCraft.gd" id="1_ir8mt"]
+[ext_resource type="LabelSettings" uid="uid://oci4csvqfyd8" path="res://SqueedleCraft/BasicText.tres" id="2_e8g6w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tiwk4"]
-font_size = 24
+font_size = 36
 font_color = Color(0.77, 0.1617, 0.192115, 1)
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
@@ -41,10 +42,12 @@ offset_bottom = 182.0
 layout_mode = 2
 text = "Player
 "
+label_settings = ExtResource("2_e8g6w")
 
 [node name="HP" type="Label" parent="Player"]
 layout_mode = 2
 text = "HP: {hp} / {max}"
+label_settings = ExtResource("2_e8g6w")
 
 [node name="AttackBar" type="ColorRect" parent="Player"]
 custom_minimum_size = Vector2(0, 10)
@@ -66,6 +69,7 @@ offset_top = 408.0
 offset_right = 256.0
 offset_bottom = 431.0
 text = "xp: {xp}"
+label_settings = ExtResource("2_e8g6w")
 
 [node name="Enemy" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -78,10 +82,12 @@ offset_bottom = 182.0
 layout_mode = 2
 text = "Enemy
 "
+label_settings = ExtResource("2_e8g6w")
 
 [node name="HP" type="Label" parent="Enemy"]
 layout_mode = 2
 text = "HP: {hp} / {max}"
+label_settings = ExtResource("2_e8g6w")
 
 [node name="AttackBar" type="ColorRect" parent="Enemy"]
 custom_minimum_size = Vector2(0, 10)
