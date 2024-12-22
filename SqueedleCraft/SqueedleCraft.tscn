@@ -1,33 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://drob358kq6qwp"]
+[gd_scene load_steps=3 format=3 uid="uid://drob358kq6qwp"]
 
 [ext_resource type="Script" path="res://SqueedleCraft/SqueedleCraft.gd" id="1_ir8mt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tiwk4"]
+font_size = 24
+font_color = Color(0.77, 0.1617, 0.192115, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.4)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ir8mt")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 218.0
-offset_right = 251.0
-offset_bottom = 249.0
+offset_left = 300.0
+offset_top = 311.0
+offset_right = 380.0
+offset_bottom = 342.0
 text = "CLICK ME"
 
-[node name="Label" type="Label" parent="."]
+[node name="Player" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 118.0
+offset_right = 272.0
+offset_bottom = 182.0
+
+[node name="Name" type="Label" parent="Player"]
+layout_mode = 2
+text = "Player
+"
+
+[node name="HP" type="Label" parent="Player"]
+layout_mode = 2
+text = "HP: {hp} / {max}"
+
+[node name="AttackBar" type="ColorRect" parent="Player"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(0.0156863, 0.211765, 0.376471, 1)
+
+[node name="Fill" type="ColorRect" parent="Player/AttackBar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 50.0
+grow_vertical = 2
+color = Color(0.45098, 0.835294, 1, 1)
+
+[node name="XP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 408.0
+offset_right = 256.0
+offset_bottom = 431.0
+text = "xp: {xp}"
+
+[node name="Enemy" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 522.0
+offset_top = 118.0
+offset_right = 645.0
+offset_bottom = 182.0
+
+[node name="Name" type="Label" parent="Enemy"]
+layout_mode = 2
+text = "Enemy
+"
+
+[node name="HP" type="Label" parent="Enemy"]
+layout_mode = 2
+text = "HP: {hp} / {max}"
+
+[node name="AttackBar" type="ColorRect" parent="Enemy"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+color = Color(0.0156863, 0.211765, 0.376471, 1)
+
+[node name="Fill" type="ColorRect" parent="Enemy/AttackBar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 50.0
+grow_vertical = 2
+color = Color(0.45098, 0.835294, 1, 1)
+
+[node name="Damage" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Template" type="Label" parent="Damage"]
 visible = false
 layout_mode = 0
-offset_left = 205.0
-offset_top = 271.0
-offset_right = 390.0
-offset_bottom = 349.0
-text = "oh god whydid you do it
-the orphans
-there's blood everyone"
+offset_left = 344.0
+offset_top = -172.0
+offset_right = 384.0
+offset_bottom = -149.0
+text = "777"
+label_settings = SubResource("LabelSettings_tiwk4")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

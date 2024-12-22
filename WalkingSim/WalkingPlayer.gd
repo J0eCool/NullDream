@@ -66,5 +66,5 @@ func _physics_process(dt: float) -> void:
 	var direction = forward.normalized()
 	velocity.x = move_toward(velocity.x, direction.x*move_speed, acceleration*dt)
 	velocity.z = move_toward(velocity.z, direction.z*move_speed, acceleration*dt)
-		
+
 	move_and_slide()
