@@ -1,7 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://yefd3qjhnty5"]
+[gd_scene load_steps=3 format=3 uid="uid://yefd3qjhnty5"]
 
-[ext_resource type="PackedScene" uid="uid://ba668nhwkhnst" path="res://BlackjackRPG/Cards/card.tscn" id="1_c2g18"]
+[ext_resource type="Script" path="res://BlackjackRPG/blackjack_rpg.gd" id="1_wsxcj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hn8b"]
+font_size = 80
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.541176)
+shadow_offset = Vector2(2, 2)
 
 [node name="BlackjackRpg" type="Node2D"]
+script = ExtResource("1_wsxcj")
 
-[node name="Card" parent="." instance=ExtResource("1_c2g18")]
+[node name="Cards" type="Node2D" parent="."]
+position = Vector2(224, 244)
+
+[node name="NewHand" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 123.0
+offset_bottom = 59.0
+text = "New Hand"
+
+[node name="Hit" type="Button" parent="."]
+offset_left = 237.0
+offset_top = 499.0
+offset_right = 326.0
+offset_bottom = 530.0
+text = "Hit"
+
+[node name="Stand" type="Button" parent="."]
+offset_left = 348.0
+offset_top = 499.0
+offset_right = 437.0
+offset_bottom = 530.0
+text = "Stand"
+
+[node name="HandValue" type="Label" parent="."]
+offset_left = 287.0
+offset_top = 346.0
+offset_right = 378.0
+offset_bottom = 456.0
+text = "21"
+label_settings = SubResource("LabelSettings_5hn8b")
+
+[connection signal="pressed" from="NewHand" to="." method="_on_new_hand_pressed"]
+[connection signal="pressed" from="Hit" to="." method="_on_hit_pressed"]

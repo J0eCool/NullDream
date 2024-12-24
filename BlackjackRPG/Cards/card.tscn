@@ -60,10 +60,8 @@ animations = [{
 }]
 
 [node name="Card" type="Sprite2D"]
-position = Vector2(186, 225)
 texture = ExtResource("1_477cc")
 script = ExtResource("2_dn4nb")
-card_val = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = -42.0
