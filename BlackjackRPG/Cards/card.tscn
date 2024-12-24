@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba668nhwkhnst"]
+
+[ext_resource type="Texture2D" uid="uid://drulrh6pwqk4v" path="res://BlackjackRPG/Cards/CardFrame.png" id="1_477cc"]
+[ext_resource type="Script" path="res://BlackjackRPG/Cards/card.gd" id="2_dn4nb"]
+[ext_resource type="Texture2D" uid="uid://b7gk4bxcb01bb" path="res://BlackjackRPG/Cards/Suits.png" id="2_rtlct"]
+
+[sub_resource type="Theme" id="Theme_tixwt"]
+default_font_size = 64
+Label/constants/outline_size = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muu40"]
+atlas = ExtResource("2_rtlct")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq11l"]
+atlas = ExtResource("2_rtlct")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2v48"]
+atlas = ExtResource("2_rtlct")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0no3"]
+atlas = ExtResource("2_rtlct")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja4vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muu40")
+}],
+"loop": true,
+"name": &"club",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq11l")
+}],
+"loop": true,
+"name": &"diamond",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2v48")
+}],
+"loop": true,
+"name": &"heart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0no3")
+}],
+"loop": true,
+"name": &"spade",
+"speed": 5.0
+}]
+
+[node name="Card" type="Sprite2D"]
+position = Vector2(186, 225)
+texture = ExtResource("1_477cc")
+script = ExtResource("2_dn4nb")
+card_val = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = -42.0
+offset_top = -51.0
+offset_right = 43.0
+offset_bottom = 37.0
+theme = SubResource("Theme_tixwt")
+text = "Q"
+horizontal_alignment = 1
+
+[node name="Suit_UL" type="AnimatedSprite2D" parent="."]
+position = Vector2(-29.8, -47.8)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_ja4vk")
+animation = &"diamond"
+
+[node name="Suit_BR" type="AnimatedSprite2D" parent="."]
+position = Vector2(28.2, 46.2)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_ja4vk")
+animation = &"diamond"
