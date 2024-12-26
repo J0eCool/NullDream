@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://yefd3qjhnty5"]
+[gd_scene load_steps=4 format=3 uid="uid://yefd3qjhnty5"]
 
 [ext_resource type="Script" path="res://BlackjackRPG/blackjack_rpg.gd" id="1_wsxcj"]
+[ext_resource type="Theme" uid="uid://clqaw4338163" path="res://BlackjackRPG/UI_Theme.tres" id="2_8gxnd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hn8b"]
 font_size = 80
@@ -11,42 +12,70 @@ shadow_offset = Vector2(2, 2)
 [node name="BlackjackRpg" type="Node2D"]
 script = ExtResource("1_wsxcj")
 
-[node name="Cards" type="HBoxContainer" parent="."]
+[node name="Player" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="Player"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 505.0
+offset_right = 157.0
+offset_bottom = 528.0
+theme = ExtResource("2_8gxnd")
+theme_type_variation = &"HeaderMedium"
+text = "Player"
+
+[node name="Cards" type="HBoxContainer" parent="Player"]
 custom_minimum_size = Vector2(768, 128)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 154.0
-offset_top = 211.0
-offset_right = 922.0
-offset_bottom = 339.0
+offset_left = 177.0
+offset_top = 331.0
+offset_right = 945.0
+offset_bottom = 459.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="NewHand" type="Button" parent="."]
-offset_left = 312.0
-offset_top = 539.0
-offset_right = 401.0
-offset_bottom = 570.0
-text = "New Hand"
-
-[node name="Hit" type="Button" parent="."]
-offset_left = 487.0
-offset_top = 445.0
-offset_right = 576.0
-offset_bottom = 476.0
-text = "Hit"
-
-[node name="HandValue" type="Label" parent="."]
-offset_left = 486.0
-offset_top = 342.0
-offset_right = 577.0
-offset_bottom = 452.0
+[node name="HandValue" type="Label" parent="Player"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 482.0
+offset_right = 620.0
+offset_bottom = 592.0
 text = "21"
 label_settings = SubResource("LabelSettings_5hn8b")
 
-[connection signal="pressed" from="NewHand" to="." method="_on_new_hand_pressed"]
-[connection signal="pressed" from="Hit" to="." method="_on_hit_pressed"]
+[node name="NewHand" type="Button" parent="Player"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 679.0
+offset_right = 444.0
+offset_bottom = 710.0
+text = "New Hand"
+
+[node name="Hit" type="Button" parent="Player"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 585.0
+offset_right = 619.0
+offset_bottom = 616.0
+text = "Hit"
+
+[node name="LogLabel" type="Label" parent="."]
+offset_left = 149.0
+offset_top = 613.0
+offset_right = 322.0
+offset_bottom = 636.0
+theme = ExtResource("2_8gxnd")
+text = "You dealt {xx} damage"
+
+[connection signal="pressed" from="Player/NewHand" to="." method="_on_new_hand_pressed"]
+[connection signal="pressed" from="Player/Hit" to="." method="_on_hit_pressed"]

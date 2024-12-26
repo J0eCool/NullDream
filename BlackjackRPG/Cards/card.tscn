@@ -70,6 +70,7 @@ position = Vector2(47, 64)
 texture = ExtResource("1_477cc")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 13.0
 offset_right = 90.0
@@ -85,7 +86,7 @@ sprite_frames = SubResource("SpriteFrames_ja4vk")
 animation = &"diamond"
 
 [node name="Suit_BR" type="AnimatedSprite2D" parent="."]
-position = Vector2(75.2, 110.2)
+position = Vector2(76.2, 110.2)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_ja4vk")
 animation = &"diamond"
